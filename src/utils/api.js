@@ -3,29 +3,11 @@ import axios from 'axios';
 
 const initData = window.Telegram.WebApp.initData;
 
-// fetch('https://example.com/api/authorize', {
-//   method: 'POST',
-//   headers: {
-//     'Content-Type': 'application/json',
-//     'Authorization': `tma ${initDataRaw}`
-//   },
-// })
-//   .then(response => response.json())
-//   .then(data => {
-//     console.log('Authorization success:', data);
-//   })
-//   .catch(error => {
-//     console.error('Authorization failed:', error);
-//   });
-
-console.log('initData:', initData);
-
-
 const api = axios.create({
   baseURL: '', 
   headers: {
     'Content-Type': 'application/json',
-    'Authorization': `${initData}`,
+    'Authorization': `lol kek ${initData}`,
   },
 });
 
