@@ -25,7 +25,7 @@ const api = axios.create({
   baseURL: '', 
   headers: {
     'Content-Type': 'application/json',
-    Authorization: `tma ${initDataRaw}`, 
+    'Authorization': `${initDataRaw}`,
   },
 });
 
