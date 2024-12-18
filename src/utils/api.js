@@ -1,8 +1,7 @@
 import { retrieveLaunchParams } from '@telegram-apps/sdk';
-import { useLaunchParams } from '@telegram-apps/sdk';
 import axios from 'axios';
 
-const { initData } = useLaunchParams().initDataRaw.useInitData()
+const initData = retrieveLaunchParams().initDataRaw.useInitData();
 
 // fetch('https://example.com/api/authorize', {
 //   method: 'POST',
