@@ -7,7 +7,7 @@ const api = axios.create({
   baseURL: '', 
   headers: {
     'Content-Type': 'application/json',
-    'Authorization': `lol kek ${initData}`,
+    'Authorization': `${initData}`,
   },
 });
 
