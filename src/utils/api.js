@@ -1,7 +1,8 @@
 import { retrieveLaunchParams } from '@telegram-apps/sdk';
+import { tgWebApp } from 'https://telegram.org/js/telegram-web-app.js'
 import axios from 'axios';
 
-const initData = retrieveLaunchParams().initDataRaw.useInitData();
+const initData = tgWebApp.WebApp.initData;
 
 // fetch('https://example.com/api/authorize', {
 //   method: 'POST',
