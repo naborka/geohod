@@ -172,24 +172,21 @@
 <script>
     const eventList = document.getElementById('eventList');
 
-    // Sample event data (replace with your actual data source)
     let events = JSON.parse(localStorage.getItem('events')) || [];
 
-
     function displayEvents() {
-        eventList.innerHTML = ''; // Clear existing list
+        eventList.innerHTML = '';
 
         events.forEach(event => {
             const eventItem = document.createElement('div');
             eventItem.classList.add('event-item');
             eventItem.addEventListener('click', () => {
-                // Handle event click (e.g., view details)
                 console.log("Event clicked:", event.name);
             });
 
-            const icon = document.createElement('img');
-            icon.src = event.icon || 'placeholder_icon.png'; // Use event icon or placeholder
-            icon.alt = "Event Icon";
+            const icon = document.createElement('div'); // Create a div for the icon
+            icon.id = "userIcon"; // Keep the ID for styling
+            icon.textContent = event.icon; // Set the initials
             eventItem.appendChild(icon);
 
             const details = document.createElement('div');
@@ -210,12 +207,11 @@
         });
     }
 
-    displayEvents(); // Initial display
+    displayEvents();
 
-    // Listen for storage changes (when a new event is added)
     window.addEventListener('storage', () => {
-        events = JSON.parse(localStorage.getItem('events')) || []; // Get updated events
-        displayEvents(); // Refresh the list
+        events = JSON.parse(localStorage.getItem('events')) || [];
+        displayEvents();
     });
 
 </script>
