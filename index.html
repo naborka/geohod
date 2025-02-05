@@ -161,13 +161,23 @@
             isValid = false;
         }
 
-        if (!isValid) {
-            event.preventDefault();
-        } else {
-            // Here you would typically send the form data to your server
-            alert("Event Created Successfully!"); // Placeholder
+        if (isValid) {
+            const eventData = {
+                name: eventNameInput.value,
+                date: eventDateInput.value,
+                maxParticipants: maxParticipantsInput.value,
+                icon: document.getElementById("userIcon").textContent, // Add the icon (initials)
+            };
+
+            let events = JSON.parse(localStorage.getItem('events')) || [];
+            events.push(eventData);
+            localStorage.setItem('events', JSON.stringify(events));
+
+            alert("Event Created Successfully!");
             form.reset();
-            userIcon.textContent = "AU"; // Reset icon
+            userIcon.textContent = "AU";
+
+            window.location.href = 'index.html'; // Redirect to the event list page
         }
     });
 </script>
